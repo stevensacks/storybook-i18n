@@ -1,3 +1,25 @@
+# v0.9.7 (Mon Jul 12 2021)
+
+#### 🐛 Bug Fix
+
+- Make usage instructions more explicit [#2](https://github.com/stevensacks/storybook-i18n/pull/2) ([@shilman](https://github.com/shilman))
+- Proposal to make this a library [#1](https://github.com/stevensacks/storybook-i18n/pull/1) ([@shilman](https://github.com/shilman))
+
+#### ⚠️ Pushed to `main`
+
+- v0.9.6 (stevensacks@gmail.com)
+- update version (stevensacks@gmail.com)
+- rename to storybook-i18n (stevensacks@gmail.com)
+- initial push (stevensacks@gmail.com)
+- Initial commit (stevensacks@gmail.com)
+
+#### Authors: 2
+
+- Michael Shilman ([@shilman](https://github.com/shilman))
+- Steven Sacks ([@stevensacks](https://github.com/stevensacks))
+
+---
+
 # v0.9.5 (Mon Jul 12 2021)
 
 #### 🐛 Bug Fix
