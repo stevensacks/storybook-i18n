@@ -12,28 +12,33 @@ As an addon author, you can use this library by adding it as a dependency and ad
 
 ```js
 function config(entry = []) {
-  return [
-    ...entry,
-    require.resolve("storybook-i18n/preview"), // <-- library's preview preset
-    require.resolve("./dist/esm/preset/preview"), // <-- your addon's preview preset
-  ];
+    return [
+        ...entry,
+        require.resolve('storybook-i18n/preview'), // <-- library's preview preset
+        require.resolve('./dist/esm/preset/preview'), // <-- your addon's preview preset (if present)
+    ];
 }
 
 function managerEntries(entry = []) {
-  return [...entry, require.resolve("storybook-i18n/manager")];
+    return [
+        ...entry,
+        require.resolve('storybook-i18n/manager'),
+        require.resolve('./dist/esm/preset/manager'), // <-- your addon's manager (if present)
+    ];
 }
 
-module.exports = { managerEntries, config };
+module.exports = {config, managerEntries};
 ```
 
 The currently selected locale is available in the `locale` global, so you can access it in a decorator using the following snippet:
 
 ```js
-import { MyProvider } from 'my-i18n-library';
+import { MyProvider } from 'your-i18n-library';
 import { useGlobals } from '@storybook/client-api';
 
 const myDecorator = (story, context) => {
   const [{locale}] = useGlobals();
+  
   return <MyProvider locale={locale}>;
 }
 ```
