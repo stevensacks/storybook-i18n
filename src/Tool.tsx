@@ -1,31 +1,65 @@
-import React, { useCallback } from "react";
-import { useGlobals } from "@storybook/api";
-import { Icons, IconButton } from "@storybook/components";
-import { TOOL_ID } from "./constants";
+import React from 'react';
+import {
+  Icons,
+  IconButton,
+  WithTooltip,
+  TooltipLinkList,
+} from '@storybook/components';
+import {useGlobals} from '@storybook/api';
 
-export const Tool = () => {
-  const [{ myAddon }, updateGlobals] = useGlobals();
+export interface Link {
+  id: string;
+  title: string;
+  active: boolean;
+  onClick: () => void;
+}
 
-  const toggleMyTool = useCallback(
-    () =>
-      updateGlobals({
-        myAddon: !myAddon,
-      }),
-    [myAddon]
-  );
+const getLocales = (
+  locales: string[],
+  locale: string,
+  onSelect: (selected: string) => void
+): Link[] =>
+  locales
+    ? Object.entries(locales).map(([key, name]) => ({
+      id: key,
+      title: name,
+      active: key === locale,
+      onClick: () => onSelect(key),
+    }))
+    : [
+      {
+        id: 'none',
+        title: 'No locales in parameters',
+        active: true,
+        onClick: () => {},
+      },
+    ];
+
+const Tool = () => {
+  const [globals, updateGlobals] = useGlobals();
+  const {locale, locales} = globals;
 
   return (
-    <IconButton
-      key={TOOL_ID}
-      active={myAddon}
-      title="Enable my addon"
-      onClick={toggleMyTool}
+    <WithTooltip
+      closeOnClick={true}
+      placement="top"
+      tooltip={({onHide}) => (
+        <TooltipLinkList
+          links={getLocales(locales, locale, (selected) => {
+            if (selected !== locale) {
+              updateGlobals({locale: selected});
+            }
+            onHide();
+          })}
+        />
+      )}
+      trigger="click"
     >
-      {/*
-        Checkout https://next--storybookjs.netlify.app/official-storybook/?path=/story/basics-icon--labels
-        for the full list of icons
-      */}
-      <Icons icon="lightning" />
-    </IconButton>
+      <IconButton key="i18n-locale" title="Locale Selector">
+        <Icons icon="globe" />
+      </IconButton>
+    </WithTooltip>
   );
 };
+
+export default Tool;

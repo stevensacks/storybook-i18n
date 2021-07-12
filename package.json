@@ -1,17 +1,21 @@
 {
-  "name": "storybook-addon-kit",
-  "version": "0.0.0",
-  "description": "everything you need to build a Storybook addon",
+  "name": "storybook-locale",
+  "version": "0.9.0",
+  "description": "Tool to set the locale in Storybook for i18n",
   "keywords": [
     "storybook-addons",
-    "style",
-    "test"
+    "storybook",
+    "i18n",
+    "internationalization",
+    "localization",
+    "locale",
+    "language"
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/storybookjs/storybook-addon-kit"
+    "url": "https://github.com/stevensacks/storybook-locale"
   },
-  "author": "winkerVSbecks",
+  "author": "Steven Sacks",
   "license": "MIT",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
@@ -81,7 +85,7 @@
     "access": "public"
   },
   "storybook": {
-    "displayName": "Addon Kit",
+    "displayName": "Storybook Locale",
     "supportedFrameworks": [
       "react",
       "vue",
