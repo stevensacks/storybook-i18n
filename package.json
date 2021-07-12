@@ -1,5 +1,5 @@
 {
-  "name": "storybook-locale",
+  "name": "storybook-i18n",
   "version": "0.9.0",
   "description": "Tool to set the locale in Storybook for i18n",
   "keywords": [
@@ -13,7 +13,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/stevensacks/storybook-locale"
+    "url": "https://github.com/stevensacks/storybook-i18n"
   },
   "author": "Steven Sacks",
   "license": "MIT",
@@ -85,7 +85,7 @@
     "access": "public"
   },
   "storybook": {
-    "displayName": "Storybook Locale",
+    "displayName": "Storybook i18n",
     "supportedFrameworks": [
       "react",
       "vue",
