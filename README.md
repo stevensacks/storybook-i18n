@@ -11,14 +11,12 @@ A library for best-practice i18n addons in Storybook:
 As an addon author, you can use this library by adding it as a dependency and adding the following to your `/preset.js` file:
 
 ```js
-module.exports = require("storybook-i18n/preset");
-```
-
-If you need more control over the preset and want to add your own auto-configuration, you can base your preset on this template:
-
-```js
 function config(entry = []) {
-  return [...entry, require.resolve("storybook-i18n/preview")];
+  return [
+    ...entry,
+    require.resolve("storybook-i18n/preview"), // <-- library's preview preset
+    require.resolve("./dist/esm/preset/preview"), // <-- your addon's preview preset
+  ];
 }
 
 function managerEntries(entry = []) {
