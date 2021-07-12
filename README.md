@@ -1,65 +1,74 @@
-# Storybook Locale Addon
+# Storybook-i18n
 
-A Storybook addon for defining and changing locales/languages for use with i18n libraries, etc. 
+A library for best-practice i18n addons in Storybook:
 
-## Installation
+- Easy-to-use locale configuration
+- Simple drop-down menu
+- URL-linkable state for sharing
 
-Install with npm
+## Addon authors
 
-```bash
-npm i -D storybook-locale-addon
+As an addon author, you can use this library by adding it as a dependency and adding the following to your `/preset.js` file:
+
+```js
+module.exports = require("storybook-i18n/preset");
 ```
 
-Or yarn
-```bash
-yarn add -D storybook-locale-addon
+If you need more control over the preset and want to add your own auto-configuration, you can base your preset on this template:
+
+```js
+function config(entry = []) {
+  return [...entry, require.resolve("storybook-i18n/preview")];
+}
+
+function managerEntries(entry = []) {
+  return [...entry, require.resolve("storybook-i18n/manager")];
+}
+
+module.exports = { managerEntries, config };
 ```
 
-## Usage
+The currently selected locale is available in the `locale` global, so you can access it in a decorator using the following snippet:
 
-Insert this addon into your storybook main.js addons array.
-```javascript
-{
-  addons: [
-    'storybook-locale-addon',
-  ]
+```js
+import { MyProvider } from 'my-i18n-library';
+import { useGlobals } from '@storybook/client-api';
+
+const myDecorator = (story, context) => {
+  const [{locale}] = useGlobals();
+  return <MyProvider locale={locale}>;
 }
 ```
 
-In your preview.js, add the locales and the default locale to the parameters.
+## End users
+
+End users configure the `locales` and `locale` parameters in `.storybook/preview.js`.
 
 `Locales` is an object where the keys are the "ids" of the locale/language and the values are the plain text name of that locale you want to use. This is what will appear in the dropdown in the toolbar.
 
 ```javascript
 export const parameters = {
-  locale: 'en',
+  locale: "en",
   locales: {
-    en: 'English',
-    fr: 'Français',
-    ja: '日本語',    
+    en: "English",
+    fr: "Français",
+    ja: "日本語",
   },
 };
 ```
 
-You can also use full locale strings.
+Users can also use full locale strings.
 
 ```javascript
 export const parameters = {
-  locale: 'en_US',
+  locale: "en_US",
   locales: {
-    en_US: 'English (US)',
-    en_GB: 'English (GB)',
-    fr_FR: 'Français',
-    ja_JP: '日本語',    
+    en_US: "English (US)",
+    en_GB: "English (GB)",
+    fr_FR: "Français",
+    ja_JP: "日本語",
   },
 };
 ```
 
-You should use whichever format your i18n implementation expects. 
-
-## Supported i18n Libraries
-
-Placeholder for the moment
-
-* storybook-addon-i18next
-* storybook-addon-react-intl
+Addons should instruct them to use whichever format your i18n implementation expects.
