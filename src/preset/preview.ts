@@ -10,7 +10,11 @@ const withLocale = (story: StoryGetter, context: StoryContext) => {
       parameters: {locale, locales},
     } = context;
     if (locales && !globals.locales) {
-      updateGlobals({locale, locales});
+      if (locale && !globals.locale) {
+        updateGlobals({locale, locales});
+      } else {
+        updateGlobals({locales});
+      }
     }
   }, []);
   return story(context);
