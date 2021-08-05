@@ -74,4 +74,29 @@ export const parameters = {
 };
 ```
 
+If you want to include an emoji flag or some other string, you can optionally set the values to an object with the name of the locale as "title" and the string on the "right" or "left".
+
+```javascript
+export const parameters = {
+    locale: "en",
+    locales: {
+        en: {title: "English", right: '🇺🇸'},
+        fr: {title: "Français", right: '🇫🇷'},
+        ja: {title: "日本語", right: '🇯🇵'},
+    },
+};
+```
+
+```javascript
+export const parameters = {
+  locale: "en_US",
+  locales: {
+    en_US: {title: "English", left: 'US'},
+    en_GB: {title: "English", left: 'GB'},
+    fr_FR: {title: "Français", left: 'FR'},
+    ja_JP: {title: "日本語", left: 'JP'},
+  },
+};
+```
+
 Addons should instruct them to use whichever format your i18n implementation expects.
