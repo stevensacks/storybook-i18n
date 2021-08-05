@@ -1,5 +1,5 @@
 import {useEffect} from 'react';
-import {StoryContext, StoryGetter} from "@storybook/addons/dist/ts3.9/types";
+import {StoryContext, StoryGetter} from "@storybook/addons";
 import {useGlobals} from '@storybook/client-api';
 import {addDecorator} from '@storybook/react';
 
