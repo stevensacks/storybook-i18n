@@ -47,7 +47,7 @@ const myDecorator = (story, context) => {
 
 End users configure the `locales` and `locale` parameters in `.storybook/preview.js`.
 
-`Locales` is an object where the keys are the "ids" of the locale/language and the values are the plain text name of that locale you want to use. This is what will appear in the dropdown in the toolbar.
+`locales` is an object where the keys are the "ids" of the locale/language and the values are the plain text name of that locale you want to use. This is what will appear in the dropdown in the toolbar.
 
 ```javascript
 export const parameters = {
@@ -70,6 +70,35 @@ export const parameters = {
     en_GB: "English (GB)",
     fr_FR: "Français",
     ja_JP: "日本語",
+  },
+};
+```
+
+The `locales` object can also have values as an object with keys of `title`, `left`, or `right`. 
+
+This is useful if you want to include an emoji flag or some other string to the left or right side.
+
+For example:
+```javascript
+export const parameters = {
+    locale: "en",
+    locales: {
+        en: {title: "English", left: '🇺🇸'},
+        fr: {title: "Français", left: '🇫🇷'},
+        ja: {title: "日本語", left: '🇯🇵'},
+    },
+};
+```
+
+Or something like this:
+```javascript
+export const parameters = {
+  locale: "en_US",
+  locales: {
+    en_US: {title: "English", right: 'US'},
+    en_GB: {title: "English", right: 'GB'},
+    fr_FR: {title: "Français", right: 'FR'},
+    ja_JP: {title: "日本語", right: 'JP'},
   },
 };
 ```
