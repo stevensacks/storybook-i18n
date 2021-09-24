@@ -1,3 +1,15 @@
+# v1.0.6 (Fri Sep 24 2021)
+
+#### ⚠️ Pushed to `main`
+
+- fix(project): resolve merge conflicts ([@stevensacks](https://github.com/stevensacks))
+
+#### Authors: 1
+
+- Steven Sacks ([@stevensacks](https://github.com/stevensacks))
+
+---
+
 # v1.0.5 (Fri Sep 24 2021)
 
 #### 🐛 Bug Fix
