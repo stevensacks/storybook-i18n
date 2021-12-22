@@ -9,4 +9,4 @@ export const parameters = {
         es: 'Spain',
         it: '🇮🇹 Italiano',
     },
-}
+};

@@ -5,4 +5,4 @@ export default {
     title: 'Test',
 };
 
-export const Default = () => <Test/>;
+export const Default = () => <Test />;

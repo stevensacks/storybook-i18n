@@ -5,11 +5,11 @@ const Test = () => {
 
     return (
         <div style={{padding: '1rem'}}>
-            <button type="button" onClick={() => setState(p => p + 1)}>
+            <button type="button" onClick={() => setState((p) => p + 1)}>
                 <span>Test {state}</span>
             </button>
         </div>
     );
-}
+};
 
 export default Test;
