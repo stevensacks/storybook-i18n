@@ -1,3 +1,17 @@
+# v1.0.7 (Wed Dec 22 2021)
+
+#### ⚠️ Pushed to `main`
+
+- fix(project): update to storybook 6.4 ([@stevensacks](https://github.com/stevensacks))
+- chore(yarn): fix lock file ([@stevensacks](https://github.com/stevensacks))
+- chore(deps): update libraries ([@stevensacks](https://github.com/stevensacks))
+
+#### Authors: 1
+
+- Steven Sacks ([@stevensacks](https://github.com/stevensacks))
+
+---
+
 # v1.0.6 (Fri Sep 24 2021)
 
 #### ⚠️ Pushed to `main`
