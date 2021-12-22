@@ -70,11 +70,11 @@
     "zx": "1.14.1"
   },
   "peerDependencies": {
-    "@storybook/addons": "^6.3.8",
-    "@storybook/api": "^6.3.8",
-    "@storybook/components": "^6.3.8",
-    "@storybook/core-events": "^6.3.8",
-    "@storybook/theming": "^6.3.8",
+    "@storybook/addons": "^6.4.9",
+    "@storybook/api": "^6.4.9",
+    "@storybook/components": "^6.4.9",
+    "@storybook/core-events": "^6.4.9",
+    "@storybook/theming": "^6.4.9",
     "react": "^16.8.0 || ^17.0.0",
     "react-dom": "^16.8.0 || ^17.0.0"
   },
