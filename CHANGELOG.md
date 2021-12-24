@@ -1,3 +1,15 @@
+# v1.0.9 (Fri Dec 24 2021)
+
+#### ⚠️ Pushed to `main`
+
+- chore(deps): update prop-types to 15.8.0 ([@stevensacks](https://github.com/stevensacks))
+
+#### Authors: 1
+
+- Steven Sacks ([@stevensacks](https://github.com/stevensacks))
+
+---
+
 # v1.0.8 (Wed Dec 22 2021)
 
 #### ⚠️ Pushed to `main`
