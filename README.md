@@ -6,6 +6,8 @@ A library for best-practice i18n addons in Storybook:
 - Simple drop-down menu
 - URL-linkable state for sharing
 
+Requires storybook `^6.4.17`
+
 ## Addon authors
 
 As an addon author, you can use this library by adding it as a dependency and adding the following to your `/preset.js` file:

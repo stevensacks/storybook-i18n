@@ -1,10 +1,9 @@
-import {useEffect} from 'react';
 import {
     AnyFramework,
     PartialStoryFn as StoryFunction,
     StoryContext,
 } from '@storybook/csf';
-import {useGlobals} from '@storybook/client-api';
+import {useEffect, useGlobals} from '@storybook/client-api';
 
 export const withLocale = (
     story: StoryFunction<AnyFramework>,
