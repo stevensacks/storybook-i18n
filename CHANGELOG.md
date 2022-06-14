@@ -1,3 +1,15 @@
+# v1.1.2 (Tue Jun 14 2022)
+
+#### ⚠️ Pushed to `main`
+
+- fix(peer): react 16.8.0 support ([@stevensacks](https://github.com/stevensacks))
+
+#### Authors: 1
+
+- Steven Sacks ([@stevensacks](https://github.com/stevensacks))
+
+---
+
 # v1.0.12 (Tue Jun 14 2022)
 
 #### ⚠️ Pushed to `main`
