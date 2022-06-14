@@ -1,3 +1,16 @@
+# v1.0.12 (Tue Jun 14 2022)
+
+#### ⚠️ Pushed to `main`
+
+- fix(yarn): switch back to yarn from npm ([@stevensacks](https://github.com/stevensacks))
+- chore(storybook): upgrade to 6.5 and add react 18 support ([@stevensacks](https://github.com/stevensacks))
+
+#### Authors: 1
+
+- Steven Sacks ([@stevensacks](https://github.com/stevensacks))
+
+---
+
 # v1.0.11 (Mon Jan 31 2022)
 
 #### ⚠️ Pushed to `main`
