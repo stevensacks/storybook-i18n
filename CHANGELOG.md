@@ -1,3 +1,15 @@
+# v1.1.4 (Thu Aug 04 2022)
+
+#### 🐛 Bug Fix
+
+- fix: Incorrect Docs [#12](https://github.com/stevensacks/storybook-i18n/pull/12) ([@JULO01](https://github.com/JULO01))
+
+#### Authors: 1
+
+- [@JULO01](https://github.com/JULO01)
+
+---
+
 # v1.1.3 (Thu Aug 04 2022)
 
 #### 🐛 Bug Fix
