@@ -113,7 +113,7 @@ The event is emmited with the `selected locale as a parameter`.
 
 Your implementation could look like this:
 ```javascript
-import {addon} from '@storybook/addons'
+import {addons} from '@storybook/addons'
 
 addons.getChannel().on('LOCALE_CHANGED', (newLocale) => {
    changeMyI18nConfig(newLocale)
