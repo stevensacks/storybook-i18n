@@ -6,6 +6,7 @@ import {
     TooltipLinkList,
 } from '@storybook/components';
 import {useGlobals} from '@storybook/api';
+import {addons} from '@storybook/addons'
 
 export interface Link {
     id: string;
@@ -65,6 +66,7 @@ const Tool = () => {
                     links={getLocales(locales, locale, (selected) => {
                         if (selected !== locale) {
                             updateGlobals({locale: selected});
+                            addons.getChannel().emit('LOCALE_CHANGED', selected)
                         }
                         onHide();
                     })}
