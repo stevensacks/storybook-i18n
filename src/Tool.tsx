@@ -66,7 +66,7 @@ const Tool = () => {
                     links={getLocales(locales, locale, (selected) => {
                         if (selected !== locale) {
                             updateGlobals({locale: selected});
-                            addons.getChannel().emit('CHANGED_LOCALE', selected)
+                            addons.getChannel().emit('LOCALE_CHANGED', selected)
                         }
                         onHide();
                     })}
