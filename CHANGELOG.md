@@ -1,3 +1,15 @@
+# v1.1.3 (Thu Aug 04 2022)
+
+#### 🐛 Bug Fix
+
+- Feature: Emitting channel-event, when locale changes [#11](https://github.com/stevensacks/storybook-i18n/pull/11) ([@JULO01](https://github.com/JULO01))
+
+#### Authors: 1
+
+- [@JULO01](https://github.com/JULO01)
+
+---
+
 # v1.1.2 (Tue Jun 14 2022)
 
 #### ⚠️ Pushed to `main`
