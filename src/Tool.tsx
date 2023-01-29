@@ -5,7 +5,7 @@ import {
     WithTooltip,
     TooltipLinkList,
 } from '@storybook/components';
-import {useGlobals} from '@storybook/api';
+import {useGlobals, useParameter} from '@storybook/api';
 import {addons} from '@storybook/addons'
 
 export interface Link {
@@ -55,7 +55,9 @@ const getLocales = (
 
 const Tool = () => {
     const [globals, updateGlobals] = useGlobals();
+    const defaultLocale = useParameter('locale');
     const {locale, locales} = globals;
+    const active = defaultLocale && locale ? (defaultLocale !== locale) : !!locale;
 
     return (
         <WithTooltip
@@ -63,9 +65,11 @@ const Tool = () => {
             placement="top"
             tooltip={({onHide}) => (
                 <TooltipLinkList
-                    links={getLocales(locales, locale, (selected) => {
+                    links={getLocales(locales, locale === false ? defaultLocale : locale, (selected) => {
                         if (selected !== locale) {
-                            updateGlobals({locale: selected});
+                            updateGlobals({
+                                locale: defaultLocale && selected ? (defaultLocale !== selected ? selected : false) : selected
+                            });
                             addons.getChannel().emit('LOCALE_CHANGED', selected)
                         }
                         onHide();
@@ -74,7 +78,11 @@ const Tool = () => {
             )}
             trigger="click"
         >
-            <IconButton key="i18n-locale" title="Locale Selector">
+            <IconButton
+                key="i18n-locale"
+                title="Locale Selector" 
+                active={active}
+            >
                 <Icons icon="globe" />
             </IconButton>
         </WithTooltip>
