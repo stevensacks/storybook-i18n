@@ -1,3 +1,15 @@
+# v2.0.5 (Fri Apr 07 2023)
+
+#### ⚠️ Pushed to `main`
+
+- add satisfies to preview ([@stevensacks](https://github.com/stevensacks))
+
+#### Authors: 1
+
+- Steven Sacks ([@stevensacks](https://github.com/stevensacks))
+
+---
+
 # v2.0.4 (Fri Apr 07 2023)
 
 #### ⚠️ Pushed to `main`
