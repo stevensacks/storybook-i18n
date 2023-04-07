@@ -1,7 +1,7 @@
 {
   "name": "storybook-i18n",
   "version": "2.0.0",
-  "description": "Tool to set the locale in Storybook 7 for i18n",
+  "description": "Tool to set the locale in Storybook for i18n",
   "keywords": [
     "storybook-addons",
     "storybook",
