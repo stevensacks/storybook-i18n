@@ -6,37 +6,38 @@ A library for best-practice i18n addons in Storybook:
 - Simple drop-down menu
 - URL-linkable state for sharing
 
-Requires storybook `>=6.5.x`
+Requires storybook `>=7.0.0`
 
 ## Addon authors
 
-As an addon author, you can use this library by adding it as a dependency and adding the following to your `/preset.js` file:
+As an addon author, you can use this library by adding it as a dependency and adding the following to your `src/manager.ts` and `src/preview.ts` files:
 
-```js
-function config(entry = []) {
-    return [
-        ...entry,
-        require.resolve('storybook-i18n/preview'), // <-- library's preview preset
-        require.resolve('./dist/esm/preset/preview'), // <-- your addon's preview preset (if present)
-    ];
+*src/manager.ts*
+```typescript
+export * from 'storybook-i18n/manager';
+```
+
+*src/preview.ts*
+```typescript
+import type { Renderer, ProjectAnnotations } from '@storybook/types';
+import i18n from 'storybook-i18n/preview';
+import { withYourI18nDecorator } from './withYourDecorator';
+
+const i18nDecorators = i18n?.decorators || [];
+
+const preview: ProjectAnnotations<Renderer> = {
+    ...i18n,
+    decorators: [...i18nDecorators, withYourI18nDecorator],
 }
 
-function managerEntries(entry = []) {
-    return [
-        ...entry,
-        require.resolve('storybook-i18n/manager'),
-        require.resolve('./dist/esm/preset/manager'), // <-- your addon's manager (if present)
-    ];
-}
-
-module.exports = {config, managerEntries};
+export default preview;
 ```
 
 The currently selected locale is available in the `locale` global, so you can access it in a decorator using the following snippet:
 
-```js
+```typscript
 import { MyProvider } from 'your-i18n-library';
-import { useGlobals } from '@storybook/client-api';
+import { useGlobals } from '@storybook/manager-api';
 
 const myDecorator = (story, context) => {
   const [{locale}] = useGlobals();
@@ -47,32 +48,36 @@ const myDecorator = (story, context) => {
 
 ## End users
 
-End users configure the `locales` and `locale` parameters in `.storybook/preview.js`.
+End users configure the `locales` and `locale` globals in `.storybook/preview.ts`.
 
 `locales` is an object where the keys are the "ids" of the locale/language and the values are the plain text name of that locale you want to use. This is what will appear in the dropdown in the toolbar.
 
-```javascript
-export const parameters = {
-  locale: "en",
-  locales: {
-    en: "English",
-    fr: "Français",
-    ja: "日本語",
-  },
+```typescript
+const preview: Preview = {
+    globals: {
+        locale: "en",
+        locales: {
+            en: "English",
+            fr: "Français",
+            ja: "日本語",
+        },
+    },
 };
 ```
 
 Users can also use full locale strings.
 
-```javascript
-export const parameters = {
-  locale: "en_US",
-  locales: {
-    en_US: "English (US)",
-    en_GB: "English (GB)",
-    fr_FR: "Français",
-    ja_JP: "日本語",
-  },
+```typescript
+const preview: Preview = {
+    globals: {
+        locale: "en_US",
+        locales: {
+            en_US: "English (US)",
+            en_GB: "English (GB)",
+            fr_FR: "Français",
+            ja_JP: "日本語",
+        },
+    },
 };
 ```
 
@@ -81,44 +86,47 @@ The `locales` object can also have values as an object with keys of `title`, `le
 This is useful if you want to include an emoji flag or some other string to the left or right side.
 
 For example:
-```javascript
-export const parameters = {
-    locale: "en",
-    locales: {
-        en: {title: "English", left: '🇺🇸'},
-        fr: {title: "Français", left: '🇫🇷'},
-        ja: {title: "日本語", left: '🇯🇵'},
+```typescript
+const preview: Preview = {
+    globals: {
+        locale: "en",
+        locales: {
+            en: {title: "English", left: '🇺🇸'},
+            fr: {title: "Français", left: '🇫🇷'},
+            ja: {title: "日本語", left: '🇯🇵'},
+        },
     },
 };
 ```
 
 Or something like this:
-```javascript
-export const parameters = {
-  locale: "en_US",
-  locales: {
-    en_US: {title: "English", right: 'US'},
-    en_GB: {title: "English", right: 'GB'},
-    fr_FR: {title: "Français", right: 'FR'},
-    ja_JP: {title: "日本語", right: 'JP'},
-  },
+```typescript
+const preview: Preview = {
+    globals: {
+        locale: "en_US",
+        locales: {
+            en_US: {title: "English", right: 'US'},
+            en_GB: {title: "English", right: 'GB'},
+            fr_FR: {title: "Français", right: 'FR'},
+            ja_JP: {title: "日本語", right: 'JP'},
+        },
+    },
 };
 ```
 
 When the locale has been changed, an `event is emitted on the addons-channel`.
 
-You can `subscribe to this event in your preview.js`, to configure global environment settings yourself, related to your i18n-config.
+You can `subscribe to this event in your preview.ts`, to configure global environment settings yourself, related to your i18n-config.
 
 The event is emmited with the `selected locale as a parameter`.
 
 Your implementation could look like this:
 ```javascript
-import {addons} from '@storybook/addons'
+import { addons } from '@storybook/preview-api'
 
 addons.getChannel().on('LOCALE_CHANGED', (newLocale) => {
    changeMyI18nConfig(newLocale)
 });
 ```
-
 
 Addons should instruct them to use whichever format your i18n implementation expects.
