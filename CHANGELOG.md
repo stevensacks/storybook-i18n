@@ -1,3 +1,15 @@
+# v2.0.3 (Fri Apr 07 2023)
+
+#### 🐛 Bug Fix
+
+- remove manager/preview files [#18](https://github.com/stevensacks/storybook-i18n/pull/18) ([@stevensacks](https://github.com/stevensacks))
+
+#### Authors: 1
+
+- Steven Sacks ([@stevensacks](https://github.com/stevensacks))
+
+---
+
 # v1.1.6 (Fri Apr 07 2023)
 
 #### 🐛 Bug Fix
