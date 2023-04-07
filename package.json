@@ -45,15 +45,14 @@
     "*.d.ts"
   ],
   "scripts": {
-    "postinstall": "node scripts/welcome.js",
     "clean": "rimraf ./dist",
-    "prebuild": "yarn clean",
+    "prebuild": "npm run clean",
     "build": "tsup",
-    "build:watch": "yarn build --watch",
+    "build:watch": "npm run build --watch",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "concurrently \"yarn build:watch\" \"yarn storybook --quiet\"",
+    "start": "concurrently \"npm run build:watch\" \"npm run storybook --quiet\"",
     "prerelease": "zx scripts/prepublish-checks.mjs",
-    "release": "yarn build && auto shipit",
+    "release": "npm run build && auto shipit",
     "eject-ts": "zx scripts/eject-typescript.mjs",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build"
@@ -89,12 +88,9 @@
     "zx": "^1.14.1"
   },
   "peerDependencies": {
-    "@storybook/blocks": "^7.0.0",
     "@storybook/components": "^7.0.0",
-    "@storybook/core-events": "^7.0.0",
     "@storybook/manager-api": "^7.0.0",
     "@storybook/preview-api": "^7.0.0",
-    "@storybook/theming": "^7.0.0",
     "@storybook/types": "^7.0.0",
     "react": "^16.8.0 || ^17.0.0 || ^18.0.0",
     "react-dom": "^16.8.0 || ^17.0.0 || ^18.0.0"
