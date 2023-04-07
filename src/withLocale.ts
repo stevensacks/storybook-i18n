@@ -1,26 +1,25 @@
+import {useEffect, useGlobals} from '@storybook/preview-api';
 import {
-    AnyFramework,
     PartialStoryFn as StoryFunction,
+    Renderer,
     StoryContext,
-} from '@storybook/csf';
-import {useEffect, useGlobals} from '@storybook/client-api';
+} from '@storybook/types';
 
 export const withLocale = (
-    story: StoryFunction<AnyFramework>,
+    story: StoryFunction<Renderer>,
     context: StoryContext
 ) => {
-    const [globals, updateGlobals] = useGlobals();
+    const [_, updateGlobals] = useGlobals();
+
     useEffect(() => {
         const {
-            parameters: {locale, locales},
+            parameters: {locale},
         } = context;
-        if (locales && !globals.locales) {
-            if (locale && !globals.locale) {
-                updateGlobals({locale, locales});
-            } else {
-                updateGlobals({locales});
-            }
+
+        if (locale) {
+            updateGlobals({locale});
         }
     }, []);
+
     return story(context);
 };
