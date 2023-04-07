@@ -11,10 +11,6 @@
     "locale",
     "language"
   ],
-  "homepage": "https://github.com/stevensacks/storybook-i18n#readme",
-  "bugs": {
-    "url": "https://github.com/stevensacks/storybook-i18n/issues"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/stevensacks/storybook-i18n.git"
