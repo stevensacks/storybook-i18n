@@ -1,3 +1,15 @@
+# v1.1.5 (Fri Apr 07 2023)
+
+#### 🐛 Bug Fix
+
+- Do not use default `@storybook/addons` import. [#13](https://github.com/stevensacks/storybook-i18n/pull/13) ([@wtgtybhertgeghgtwtg](https://github.com/wtgtybhertgeghgtwtg))
+
+#### Authors: 1
+
+- [@wtgtybhertgeghgtwtg](https://github.com/wtgtybhertgeghgtwtg)
+
+---
+
 # v1.1.4 (Thu Aug 04 2022)
 
 #### 🐛 Bug Fix
