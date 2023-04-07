@@ -18,7 +18,7 @@ jobs:
           node-version: 16.x
 
       - name: Install dependencies
-        run: npm install -ci
+        run: npm install
 
       - name: Create Release
         env:
