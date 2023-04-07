@@ -1,6 +1,6 @@
 {
   "name": "storybook-i18n",
-  "version": "2.0.1",
+  "version": "1.1.4",
   "description": "Tool to set the locale in Storybook for i18n",
   "keywords": [
     "storybook-addons",
@@ -46,13 +46,13 @@
   ],
   "scripts": {
     "clean": "rimraf ./dist",
-    "prebuild": "npm run clean",
+    "prebuild": "yarn clean",
     "build": "tsup",
-    "build:watch": "npm run build --watch",
+    "build:watch": "yarn build --watch",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "concurrently \"npm run build:watch\" \"npm run storybook --quiet\"",
+    "start": "concurrently \"yarn build:watch\" \"yarn storybook --quiet\"",
     "prerelease": "zx scripts/prepublish-checks.mjs",
-    "release": "npm run build && auto shipit",
+    "release": "yarn build && auto shipit",
     "eject-ts": "zx scripts/eject-typescript.mjs",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build"
