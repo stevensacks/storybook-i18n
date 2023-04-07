@@ -11,6 +11,19 @@
 
 ---
 
+# v1.1.6 (Fri Apr 07 2023)
+
+#### 🐛 Bug Fix
+
+- change version to 2.0.0 [#17](https://github.com/stevensacks/storybook-i18n/pull/17) ([@stevensacks](https://github.com/stevensacks))
+- feat: migrate to Storybook 7 [#16](https://github.com/stevensacks/storybook-i18n/pull/16) ([@stevensacks](https://github.com/stevensacks))
+
+#### Authors: 1
+
+- Steven Sacks ([@stevensacks](https://github.com/stevensacks))
+
+---
+
 # v1.1.5 (Fri Apr 07 2023)
 
 #### 🐛 Bug Fix
