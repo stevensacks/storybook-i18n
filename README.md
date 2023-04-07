@@ -23,6 +23,7 @@ import type { Renderer, ProjectAnnotations } from '@storybook/types';
 import i18n from 'storybook-i18n/preview';
 import { withYourI18nDecorator } from './withYourDecorator';
 
+// @ts-ignore
 const i18nDecorators = i18n?.decorators || [];
 
 const preview: ProjectAnnotations<Renderer> = {
@@ -32,6 +33,8 @@ const preview: ProjectAnnotations<Renderer> = {
 
 export default preview;
 ```
+
+Due to an issue with Storybook (pending resolution), you will need that `@ts-ignore` above the decorators line.
 
 The currently selected locale is available in the `locale` global, so you can access it in a decorator using the following snippet:
 
