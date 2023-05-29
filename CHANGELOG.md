@@ -1,3 +1,15 @@
+# v2.0.7 (Mon May 29 2023)
+
+#### ⚠️ Pushed to `main`
+
+- chore(project): update deps ([@stevensacks](https://github.com/stevensacks))
+
+#### Authors: 1
+
+- Steven Sacks ([@stevensacks](https://github.com/stevensacks))
+
+---
+
 # v2.0.6 (Fri Apr 07 2023)
 
 #### ⚠️ Pushed to `main`
