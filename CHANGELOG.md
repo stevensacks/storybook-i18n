@@ -1,3 +1,15 @@
+# v2.0.8 (Tue Jun 13 2023)
+
+#### ⚠️ Pushed to `main`
+
+- chore: update storybook to 7.0.20 ([@stevensacks](https://github.com/stevensacks))
+
+#### Authors: 1
+
+- Steven Sacks ([@stevensacks](https://github.com/stevensacks))
+
+---
+
 # v2.0.7 (Mon May 29 2023)
 
 #### ⚠️ Pushed to `main`
