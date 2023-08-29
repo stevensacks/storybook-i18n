@@ -5,8 +5,8 @@ import {
     WithTooltip,
     TooltipLinkList,
 } from '@storybook/components';
-import {useGlobals} from '@storybook/manager-api';
-import {addons} from '@storybook/preview-api';
+import {useChannel, useGlobals} from '@storybook/manager-api';
+import {EVENT_NAME} from './constants';
 
 export interface Link {
     id: string;
@@ -56,6 +56,7 @@ const getLocales = (
 const Tool = () => {
     const [globals, updateGlobals] = useGlobals();
     const {locale, locales} = globals;
+    const emit = useChannel({});
 
     return (
         <WithTooltip
@@ -65,9 +66,7 @@ const Tool = () => {
                     links={getLocales(locales, locale, (selected) => {
                         if (selected !== locale) {
                             updateGlobals({locale: selected});
-                            addons
-                                .getChannel()
-                                .emit('LOCALE_CHANGED', selected);
+                            emit(EVENT_NAME, selected);
                         }
                         onHide();
                     })}
