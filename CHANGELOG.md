@@ -24,6 +24,19 @@
 
 ---
 
+# v2.0.9 (Tue Aug 29 2023)
+
+#### ⚠️ Pushed to `main`
+
+- chore: update storybook dependencies ([@stevensacks](https://github.com/stevensacks))
+- fix: switch to newer api useChannel ([@stevensacks](https://github.com/stevensacks))
+
+#### Authors: 1
+
+- Steven Sacks ([@stevensacks](https://github.com/stevensacks))
+
+---
+
 # v2.0.8 (Tue Jun 13 2023)
 
 #### ⚠️ Pushed to `main`
