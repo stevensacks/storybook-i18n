@@ -1,10 +1,6 @@
 import React from 'react';
-import {
-    Icons,
-    IconButton,
-    WithTooltip,
-    TooltipLinkList,
-} from '@storybook/components';
+import {IconButton, WithTooltip, TooltipLinkList} from '@storybook/components';
+import {GlobeIcon} from '@storybook/icons';
 import {useChannel, useGlobals} from '@storybook/manager-api';
 import {EVENT_NAME} from './constants';
 
@@ -35,7 +31,7 @@ const getValue = (value: LocaleValue) => {
 const getLocales = (
     locales: Record<string, LocaleValue>,
     locale: string,
-    onSelect: (selected: string) => void
+    onSelect: (selected: string) => void,
 ): Link[] =>
     locales
         ? Object.entries(locales).map(([key, value]) => ({
@@ -60,6 +56,7 @@ const Tool = () => {
 
     return (
         <WithTooltip
+            closeOnOutsideClick={true}
             placement="top"
             tooltip={({onHide}) => (
                 <TooltipLinkList
@@ -75,7 +72,7 @@ const Tool = () => {
             trigger="click"
         >
             <IconButton key="i18n-locale" title="Locale Selector">
-                <Icons icon="globe" />
+                <GlobeIcon />
             </IconButton>
         </WithTooltip>
     );
