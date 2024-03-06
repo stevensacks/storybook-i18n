@@ -84,19 +84,19 @@ const preview: Preview = {
 };
 ```
 
-The `locales` object can also have values as an object with keys of `title`, `left`, or `right`. 
+The `locales` object can also have values as an object with keys of `title`, `icon`, and/or `right`. 
 
-This is useful if you want to include an emoji flag or some other string to the left or right side.
+This is useful if you want to include an emoji flag or some other string to the left and/or right side.
 
 For example:
 ```typescript
 const preview: Preview = {
     globals: {
-        locale: "en",
+        locale: 'en',
         locales: {
-            en: {title: "English", left: '🇺🇸'},
-            fr: {title: "Français", left: '🇫🇷'},
-            ja: {title: "日本語", left: '🇯🇵'},
+            en: {icon: '🇺🇸', title: 'English', right: 'US'},
+            fr: {icon: '🇫🇷', title: 'Français', right: 'FR'},
+            ja: {icon: '🇯🇵', title: '日本語', right: 'JP'},
         },
     },
 };
@@ -106,12 +106,12 @@ Or something like this:
 ```typescript
 const preview: Preview = {
     globals: {
-        locale: "en_US",
+        locale: 'en_US',
         locales: {
-            en_US: {title: "English", right: 'US'},
-            en_GB: {title: "English", right: 'GB'},
-            fr_FR: {title: "Français", right: 'FR'},
-            ja_JP: {title: "日本語", right: 'JP'},
+            en_US: {title: 'English', right: 'US'},
+            en_GB: {title: 'English', right: 'GB'},
+            fr_FR: {title: 'Français', right: 'FR'},
+            ja_JP: {title: '日本語', right: 'JP'},
         },
     },
 };
@@ -121,7 +121,7 @@ When the locale has been changed, an `event is emitted on the addons-channel`.
 
 You can `subscribe to this event in your preview.ts`, to configure global environment settings yourself, related to your i18n-config.
 
-The event is emmited with the `selected locale as a parameter`.
+The event is emitted with the `selected locale as a parameter`.
 
 Your implementation could look like this:
 ```javascript

@@ -9,13 +9,13 @@ export interface Link {
     title: string;
     active: boolean;
     onClick: () => void;
-    left?: string;
+    icon?: string;
     right?: string;
 }
 
 export type LocaleValue =
     | string
-    | {title: string; left?: string; right?: string};
+    | {title: string; icon?: string; right?: string};
 
 const getValue = (value: LocaleValue) => {
     if (typeof value === 'string') {
@@ -23,7 +23,7 @@ const getValue = (value: LocaleValue) => {
     }
     return {
         title: value.title || '',
-        left: value.left,
+        icon: value.icon,
         right: value.right,
     };
 };
