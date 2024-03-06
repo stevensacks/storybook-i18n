@@ -1,6 +1,6 @@
 {
   "name": "storybook-i18n",
-  "version": "2.0.13",
+  "version": "2.1.0",
   "description": "Tool to set the locale in Storybook for i18n",
   "keywords": [
     "storybook-addons",
@@ -16,28 +16,22 @@
     "url": "git+https://github.com/stevensacks/storybook-i18n.git"
   },
   "author": "Steven Sacks",
+  "type": "module",
   "license": "MIT",
   "exports": {
     ".": {
-      "require": "./dist/index.js",
-      "import": "./dist/index.mjs",
-      "types": "./dist/index.d.ts"
-    },
-    "./manager": {
-      "require": "./dist/manager.js",
-      "import": "./dist/manager.mjs",
-      "types": "./dist/manager.d.ts"
+      "types": "./dist/index.d.ts",
+      "require": "./dist/index.cjs",
+      "import": "./dist/index.js"
     },
     "./preview": {
-      "require": "./dist/preview.js",
-      "import": "./dist/preview.mjs",
-      "types": "./dist/preview.d.ts"
+      "types": "./dist/index.d.ts",
+      "import": "./dist/preview.js",
+      "require": "./dist/preview.js"
     },
+    "./manager": "./dist/manager.js",
     "./package.json": "./package.json"
   },
-  "main": "dist/cjs/index.js",
-  "module": "dist/esm/index.js",
-  "types": "dist/ts/index.d.ts",
   "files": [
     "dist/**/*",
     "README.md",
@@ -46,65 +40,71 @@
   ],
   "scripts": {
     "clean": "rimraf ./dist",
-    "prebuild": "yarn clean",
+    "prebuild": "npm run clean",
     "build": "tsup",
-    "build:watch": "yarn build --watch",
+    "build:watch": "npm run build -- --watch",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "concurrently \"yarn build:watch\" \"yarn storybook --quiet\"",
-    "prerelease": "zx scripts/prepublish-checks.mjs",
-    "release": "yarn build && auto shipit",
-    "eject-ts": "zx scripts/eject-typescript.mjs",
+    "start": "run-p build:watch 'storybook --quiet'",
+    "prerelease": "zx scripts/prepublish-checks.js",
+    "release": "npm run build && auto shipit",
+    "eject-ts": "zx scripts/eject-typescript.js",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build"
   },
   "devDependencies": {
-    "@storybook/addon-essentials": "7.3.2",
-    "@storybook/addon-interactions": "7.3.2",
-    "@storybook/addon-links": "7.3.2",
-    "@storybook/components": "7.3.2",
-    "@storybook/manager-api": "7.3.2",
-    "@storybook/preview-api": "7.3.2",
-    "@storybook/react": "7.3.2",
-    "@storybook/react-vite": "7.3.2",
-    "@storybook/react-webpack5": "7.3.2",
-    "@storybook/testing-library": "0.2.0",
-    "@storybook/types": "7.3.2",
+    "@storybook/addon-essentials": "8.0.0-beta.2",
+    "@storybook/addon-interactions": "8.0.0-beta.2",
+    "@storybook/addon-links": "8.0.0-beta.2",
+    "@storybook/blocks": "8.0.0-beta.2",
+    "@storybook/components": "8.0.0-beta.2",
+    "@storybook/core-events": "8.0.0-beta.2",
+    "@storybook/manager": "8.0.0-beta.2",
+    "@storybook/manager-api": "8.0.0-beta.2",
+    "@storybook/preview": "8.0.0-beta.2",
+    "@storybook/preview-api": "8.0.0-beta.2",
+    "@storybook/react": "8.0.0-beta.2",
+    "@storybook/react-vite": "8.0.0-beta.2",
+    "@storybook/testing-library": "^0.2.2",
+    "@storybook/theming": "8.0.0-beta.2",
+    "@storybook/types": "8.0.0-beta.2",
     "@types/node": "^18.15.0",
-    "@vitejs/plugin-react": "^3.1.0",
-    "auto": "^10.46.0",
-    "boxen": "^5.0.1",
-    "concurrently": "^6.2.0",
-    "dedent": "^0.7.0",
-    "prettier": "^2.8.8",
+    "@types/react": "^18.2.55",
+    "@types/react-dom": "^18.2.19",
+    "@vitejs/plugin-react": "^4.2.1",
+    "auto": "^11.0.4",
+    "boxen": "^7.1.1",
+    "dedent": "^1.5.1",
+    "npm-run-all": "^4.1.5",
+    "prettier": "^3.2.5",
     "prompts": "^2.4.2",
-    "prop-types": "^15.8.1",
-    "react": "^18.0.0",
-    "react-dom": "^18.0.0",
-    "rimraf": "^3.0.2",
-    "storybook": "7.3.2",
-    "tsup": "^6.6.3",
-    "typescript": "^4.9.5",
-    "vite": "4.4.9",
-    "zx": "^1.14.1"
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "rimraf": "^5.0.5",
+    "storybook": "8.0.0-beta.2",
+    "tsup": "^8.0.2",
+    "typescript": "^5.3.3",
+    "vite": "^5.1.2",
+    "zx": "^7.2.3"
   },
   "peerDependencies": {
     "@storybook/components": "^7.0.0",
     "@storybook/manager-api": "^7.0.0",
     "@storybook/preview-api": "^7.0.0",
-    "@storybook/types": "^7.0.0",
-    "react": "^16.8.0 || ^17.0.0 || ^18.0.0",
-    "react-dom": "^16.8.0 || ^17.0.0 || ^18.0.0"
-  },
-  "peerDependenciesMeta": {
-    "react": {
-      "optional": true
-    },
-    "react-dom": {
-      "optional": true
-    }
+    "@storybook/types": "^7.0.0"
   },
   "publishConfig": {
     "access": "public"
+  },
+  "bundler": {
+    "exportEntries": [
+      "src/index.ts"
+    ],
+    "managerEntries": [
+      "src/manager.ts"
+    ],
+    "previewEntries": [
+      "src/preview.ts"
+    ]
   },
   "storybook": {
     "displayName": "Storybook i18n",

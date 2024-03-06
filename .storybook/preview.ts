@@ -6,9 +6,9 @@ const preview: Preview = {
         locales: {
             en: {title: 'English', right: '🇺🇸'},
             gb: {title: 'English', right: 'GB'},
-            fr: {title: 'Français', left: '🇫🇷'},
-            ja: {left: '🇯🇵'},
-            de: {right: '🇩🇪'},
+            fr: {title: 'Français', icon: '🇫🇷'},
+            ja: {icon: '🇯🇵'},
+            de: {title: 'Deutsche', icon: '🇩🇪', right: 'DE'},
             es: 'Spain',
             it: '🇮🇹 Italiano',
         },
