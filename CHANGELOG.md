@@ -1,3 +1,20 @@
+# v2.0.14 (Wed Mar 06 2024)
+
+#### 🐛 Bug Fix
+
+- feat: storybook 8 [#21](https://github.com/stevensacks/storybook-i18n/pull/21) ([@stevensacks](https://github.com/stevensacks))
+
+#### ⚠️ Pushed to `main`
+
+- fix: remove peer deps ([@stevensacks](https://github.com/stevensacks))
+- Merge branch 'main' of github.com:stevensacks/storybook-i18n ([@stevensacks](https://github.com/stevensacks))
+
+#### Authors: 1
+
+- Steven Sacks ([@stevensacks](https://github.com/stevensacks))
+
+---
+
 # v2.0.9 (Tue Aug 29 2023)
 
 #### ⚠️ Pushed to `main`
