@@ -86,12 +86,6 @@
     "vite": "^5.1.2",
     "zx": "^7.2.3"
   },
-  "peerDependencies": {
-    "@storybook/components": "^7.0.0",
-    "@storybook/manager-api": "^7.0.0",
-    "@storybook/preview-api": "^7.0.0",
-    "@storybook/types": "^7.0.0"
-  },
   "publishConfig": {
     "access": "public"
   },
