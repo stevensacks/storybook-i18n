@@ -1,3 +1,15 @@
+# v2.1.3 (Fri Mar 15 2024)
+
+#### ⚠️ Pushed to `main`
+
+- fix: bump major version for Storybook 8 ([@stevensacks](https://github.com/stevensacks))
+
+#### Authors: 1
+
+- Steven Sacks ([@stevensacks](https://github.com/stevensacks))
+
+---
+
 # v2.1.2 (Thu Mar 14 2024)
 
 #### ⚠️ Pushed to `main`
