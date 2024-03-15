@@ -6,7 +6,8 @@ A library for best-practice i18n addons in Storybook:
 - Simple drop-down menu
 - URL-linkable state for sharing
 
-Requires storybook `>=7.0.0`
+2.x Requires storybook `>=7.0.0`
+3.x Requires storybook `>=8.0.0`
 
 ## Addon authors
 
