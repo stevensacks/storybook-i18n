@@ -1,3 +1,17 @@
+# v3.0.2 (Tue Jul 30 2024)
+
+#### ⚠️ Pushed to `main`
+
+- docs: README ([@stevensacks](https://github.com/stevensacks))
+- feat: storybook 8.2 initialGlobals support ([@stevensacks](https://github.com/stevensacks))
+- docs: update README with versions ([@stevensacks](https://github.com/stevensacks))
+
+#### Authors: 1
+
+- Steven Sacks ([@stevensacks](https://github.com/stevensacks))
+
+---
+
 # v2.1.3 (Fri Mar 15 2024)
 
 #### ⚠️ Pushed to `main`
