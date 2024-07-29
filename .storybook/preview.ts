@@ -1,7 +1,7 @@
 import type {Preview} from '@storybook/react';
 
 const preview: Preview = {
-    globals: {
+    initialGlobals: {
         locale: 'en',
         locales: {
             en: {title: 'English', right: '🇺🇸'},

@@ -3,7 +3,7 @@ import {withLocale} from './withLocale';
 
 const preview: ProjectAnnotations<Renderer> = {
     decorators: [withLocale],
-    globals: {
+    initialGlobals: {
         locale: '',
         locales: {},
     },

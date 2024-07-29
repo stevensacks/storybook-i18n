@@ -56,11 +56,13 @@ const myDecorator = (story, context) => {
 
 End users configure the `locales` and `locale` globals in `.storybook/preview.ts`.
 
+As of Storybook 8.2, you should use `initialGlobals` instead of `globals`.
+
 `locales` is an object where the keys are the "ids" of the locale/language and the values are the plain text name of that locale you want to use. This is what will appear in the dropdown in the toolbar.
 
 ```typescript
 const preview: Preview = {
-    globals: {
+    initialGlobals: {
         locale: "en",
         locales: {
             en: "English",
@@ -75,7 +77,7 @@ Users can also use full locale strings.
 
 ```typescript
 const preview: Preview = {
-    globals: {
+    initialGlobals: {
         locale: "en_US",
         locales: {
             en_US: "English (US)",
@@ -94,7 +96,7 @@ This is useful if you want to include an emoji flag or some other string to the 
 For example:
 ```typescript
 const preview: Preview = {
-    globals: {
+    initialGlobals: {
         locale: 'en',
         locales: {
             en: {icon: '🇺🇸', title: 'English', right: 'US'},
@@ -108,7 +110,7 @@ const preview: Preview = {
 Or something like this:
 ```typescript
 const preview: Preview = {
-    globals: {
+    initialGlobals: {
         locale: 'en_US',
         locales: {
             en_US: {title: 'English', right: 'US'},
