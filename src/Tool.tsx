@@ -1,7 +1,11 @@
 import React from 'react';
-import {IconButton, WithTooltip, TooltipLinkList} from '@storybook/components';
+import {
+    IconButton,
+    WithTooltip,
+    TooltipLinkList,
+} from 'storybook/internal/components';
 import {GlobeIcon} from '@storybook/icons';
-import {useChannel, useGlobals} from '@storybook/manager-api';
+import {useChannel, useGlobals} from 'storybook/manager-api';
 import {EVENT_NAME} from './constants';
 
 export interface Link {

@@ -1,13 +1,13 @@
-import {useEffect, useGlobals} from '@storybook/preview-api';
-import {
+import {useEffect, useGlobals} from 'storybook/preview-api';
+import type {
     PartialStoryFn as StoryFunction,
     Renderer,
     StoryContext,
-} from '@storybook/types';
+} from 'storybook/internal/types';
 
 export const withLocale = (
     story: StoryFunction<Renderer>,
-    context: StoryContext
+    context: StoryContext,
 ) => {
     const [_, updateGlobals] = useGlobals();
 
