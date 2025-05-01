@@ -1,4 +1,4 @@
-import type {Renderer, ProjectAnnotations} from '@storybook/types';
+import type {Renderer, ProjectAnnotations} from 'storybook/internal/types';
 import {withLocale} from './withLocale';
 
 const preview: ProjectAnnotations<Renderer> = {
