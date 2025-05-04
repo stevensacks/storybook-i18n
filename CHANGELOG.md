@@ -1,3 +1,15 @@
+# v4.0.2 (Sun May 04 2025)
+
+#### ⚠️ Pushed to `main`
+
+- fix: peer dep 9.0.0 beta ([@stevensacks](https://github.com/stevensacks))
+
+#### Authors: 1
+
+- Steven Sacks ([@stevensacks](https://github.com/stevensacks))
+
+---
+
 # v3.1.2 (Sun May 04 2025)
 
 #### 🐛 Bug Fix
