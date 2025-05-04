@@ -11,6 +11,7 @@ A library for best-practice i18n addons in Storybook:
 - 2.x is for Storybook `>=7.0.0`
 - 3.x is for Storybook `>=8.0.0`
 - 3.1.x is for Storybook `>=8.2.0`
+- 4.x is for Storybook `>=9.0.0`
 
 ## Addon authors
 
