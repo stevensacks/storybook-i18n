@@ -1,3 +1,23 @@
+# v3.1.2 (Sun May 04 2025)
+
+#### 🐛 Bug Fix
+
+- Update release job for SB9 [#25](https://github.com/stevensacks/storybook-i18n/pull/25) (shawn@jump.com)
+- Upgrade to storybook 9 [#24](https://github.com/stevensacks/storybook-i18n/pull/24) (shawn@jump.com)
+
+#### ⚠️ Pushed to `main`
+
+- fix: dependencies ([@stevensacks](https://github.com/stevensacks))
+- fix: imports for 9 ([@stevensacks](https://github.com/stevensacks))
+- feat: storybook 9 support ([@stevensacks](https://github.com/stevensacks))
+
+#### Authors: 2
+
+- Shawn Gustaw ([@shawngustaw](https://github.com/shawngustaw))
+- Steven Sacks ([@stevensacks](https://github.com/stevensacks))
+
+---
+
 # v3.0.2 (Tue Jul 30 2024)
 
 #### ⚠️ Pushed to `main`
