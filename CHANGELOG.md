@@ -1,3 +1,16 @@
+# v4.0.3 (Fri May 23 2025)
+
+#### ⚠️ Pushed to `main`
+
+- feat: upgrade deps ([@stevensacks](https://github.com/stevensacks))
+- fix: use npm not yarn ([@stevensacks](https://github.com/stevensacks))
+
+#### Authors: 1
+
+- Steven Sacks ([@stevensacks](https://github.com/stevensacks))
+
+---
+
 # v4.0.2 (Sun May 04 2025)
 
 #### ⚠️ Pushed to `main`
