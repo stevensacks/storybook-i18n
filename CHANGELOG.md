@@ -1,3 +1,15 @@
+# v4.0.5 (Fri Jun 06 2025)
+
+#### ⚠️ Pushed to `main`
+
+- feat: install @storybook/icons ([@stevensacks](https://github.com/stevensacks))
+
+#### Authors: 1
+
+- Steven Sacks ([@stevensacks](https://github.com/stevensacks))
+
+---
+
 # v4.0.4 (Thu May 29 2025)
 
 #### ⚠️ Pushed to `main`
