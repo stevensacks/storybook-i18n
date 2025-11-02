@@ -1,3 +1,4 @@
+import {fileURLToPath} from 'node:url';
 import {defineMain} from '@storybook/react-vite/node';
 
 const config = defineMain({
@@ -6,7 +7,7 @@ const config = defineMain({
         '@storybook/addon-links',
         '@storybook/addon-essentials',
         '@storybook/addon-interactions',
-        import.meta.resolve('./local-preset.ts'),
+        fileURLToPath(import.meta.resolve('./local-preset.js')),
     ],
     framework: '@storybook/react-vite',
 });

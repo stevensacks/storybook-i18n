@@ -42,7 +42,6 @@
         "build-storybook": "storybook build",
         "build:watch": "npm run build -- --watch",
         "eject-ts": "zx scripts/eject-typescript.js",
-        "postinstall": "node scripts/welcome.js",
         "format": "prettier --write .",
         "lint": "eslint --cache .",
         "lint:fix": "pnpm lint --fix",
