@@ -1,3 +1,16 @@
+# v4.0.6 (Thu Nov 06 2025)
+
+#### 🐛 Bug Fix
+
+- Feat/storybook 10 [#28](https://github.com/stevensacks/storybook-i18n/pull/28) ([@stevensacks](https://github.com/stevensacks) [@shilman](https://github.com/shilman))
+
+#### Authors: 2
+
+- Michael Shilman ([@shilman](https://github.com/shilman))
+- Steven Sacks ([@stevensacks](https://github.com/stevensacks))
+
+---
+
 # v4.0.5 (Fri Jun 06 2025)
 
 #### ⚠️ Pushed to `main`
