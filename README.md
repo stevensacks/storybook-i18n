@@ -12,6 +12,11 @@ A library for best-practice i18n addons in Storybook:
 - 3.x is for Storybook `>=8.0.0`
 - 3.1.x is for Storybook `>=8.2.0`
 - 4.x is for Storybook `>=9.0.0`
+- 10.x is for Storybook `>=10.0.0`
+
+### Why jump from v4 to v10?
+
+To make it easier to align versions with Storybook, I am matching major versions of Storybook from now on.
 
 ## Addon authors
 
