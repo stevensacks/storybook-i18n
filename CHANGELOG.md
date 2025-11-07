@@ -1,3 +1,15 @@
+# v10.0.2 (Fri Nov 07 2025)
+
+#### ⚠️ Pushed to `main`
+
+- fix: add manager type declaration ([@stevensacks](https://github.com/stevensacks))
+
+#### Authors: 1
+
+- Steven Sacks ([@stevensacks](https://github.com/stevensacks))
+
+---
+
 # v4.0.6 (Thu Nov 06 2025)
 
 #### 🐛 Bug Fix
