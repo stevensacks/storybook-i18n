@@ -1,3 +1,15 @@
+# v10.0.3 (Fri Nov 07 2025)
+
+#### ⚠️ Pushed to `main`
+
+- chore: replace release.yml with npmpublish.yml as per storybook addon kit ([@stevensacks](https://github.com/stevensacks))
+
+#### Authors: 1
+
+- Steven Sacks ([@stevensacks](https://github.com/stevensacks))
+
+---
+
 # v10.0.2 (Fri Nov 07 2025)
 
 #### ⚠️ Pushed to `main`
