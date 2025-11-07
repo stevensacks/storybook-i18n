@@ -48,6 +48,7 @@ export default defineConfig(async () => {
             entry: managerEntries,
             platform: 'browser',
             target: 'esnext', // we can use esnext for manager entries since Storybook will bundle the addon's manager entries again anyway
+            dts: true,
         });
     }
 
