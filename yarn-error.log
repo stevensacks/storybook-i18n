@@ -1,0 +1,151 @@
+Arguments: 
+  /Users/stevensacks/.nvm/versions/node/v22.19.0/bin/node /Users/stevensacks/.cache/node/corepack/v1/yarn/1.22.19/bin/yarn.js outdated --json react-dom auto eslint-config-prettier react @types/react-dom eslint ts-dedent vite eslint-plugin-storybook typescript npm-run-all2 prompts eslint-plugin-react @storybook/react-vite eslint-plugin-prettier tsup boxen prettier @eslint/js @types/node @storybook/icons @types/react typescript-eslint @vitejs/plugin-react zx
+
+PATH: 
+  /Users/stevensacks/.gem/ruby/3.1.3/bin:/Users/stevensacks/.rubies/ruby-3.1.3/lib/ruby/gems/3.1.0/bin:/Users/stevensacks/.rubies/ruby-3.1.3/bin:/Users/stevensacks/google-cloud-sdk/bin:/Users/stevensacks/.bun/bin:/Users/stevensacks/.pyenv/shims:/Users/stevensacks/.nvm/versions/node/v22.19.0/bin:/opt/homebrew/bin:/opt/homebrew/sbin:/usr/local/bin:/System/Cryptexes/App/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin:/opt/pmk/env/global/bin:/Library/Apple/usr/bin:/Users/stevensacks/Library/Application Support/JetBrains/Toolbox/scripts:/Users/stevensacks/.local/bin
+
+Yarn version: 
+  1.22.19
+
+Node version: 
+  22.19.0
+
+Platform: 
+  darwin arm64
+
+Trace: 
+  Error: Failed to replace env in config: ${NPM_TOKEN}
+      at /Users/stevensacks/.cache/node/corepack/v1/yarn/1.22.19/lib/cli.js:94933:13
+      at String.replace (<anonymous>)
+      at envReplace (/Users/stevensacks/.cache/node/corepack/v1/yarn/1.22.19/lib/cli.js:94928:16)
+      at Function.normalizeConfig (/Users/stevensacks/.cache/node/corepack/v1/yarn/1.22.19/lib/cli.js:31938:69)
+      at NpmRegistry.<anonymous> (/Users/stevensacks/.cache/node/corepack/v1/yarn/1.22.19/lib/cli.js:31968:34)
+      at Generator.next (<anonymous>)
+      at step (/Users/stevensacks/.cache/node/corepack/v1/yarn/1.22.19/lib/cli.js:310:30)
+      at /Users/stevensacks/.cache/node/corepack/v1/yarn/1.22.19/lib/cli.js:321:13
+
+npm manifest: 
+  {
+      "name": "storybook-i18n",
+      "version": "10.0.7",
+      "description": "Tool to set the locale in Storybook for i18n",
+      "keywords": [
+          "storybook-addon",
+          "storybook",
+          "i18n",
+          "internationalization",
+          "localization",
+          "locale",
+          "language"
+      ],
+      "repository": {
+          "type": "git",
+          "url": "https://github.com/stevensacks/storybook-i18n.git"
+      },
+      "license": "MIT",
+      "author": "Steven Sacks",
+      "type": "module",
+      "exports": {
+          ".": {
+              "types": "./dist/index.d.ts",
+              "default": "./dist/index.js"
+          },
+          "./preview": {
+              "types": "./dist/preview.d.ts",
+              "default": "./dist/preview.js"
+          },
+          "./manager": "./dist/manager.js",
+          "./package.json": "./package.json"
+      },
+      "files": [
+          "dist/**/*",
+          "README.md",
+          "*.js",
+          "*.d.ts"
+      ],
+      "scripts": {
+          "prebuild": "node -e \"fs.rmSync('./dist', { recursive: true, force: true })\"",
+          "build": "tsup",
+          "build-storybook": "storybook build",
+          "build:watch": "npm run build -- --watch",
+          "eject-ts": "zx scripts/eject-typescript.js",
+          "format": "prettier --write .",
+          "lint": "eslint --cache .",
+          "lint:fix": "pnpm lint --fix",
+          "prerelease": "zx scripts/prepublish-checks.js",
+          "release": "set -a && . ./.env && set +a && npm run build && auto shipit",
+          "start": "run-p build:watch \"storybook --quiet\"",
+          "storybook": "storybook dev -p 6006",
+          "test": "echo \"Error: no test specified\" && exit 1"
+      },
+      "dependencies": {
+          "@storybook/icons": "^2.0.1"
+      },
+      "devDependencies": {
+          "@eslint/js": "^9.36.0",
+          "@storybook/react-vite": "next",
+          "@types/node": "^20",
+          "@types/react": "^18.2.65",
+          "@types/react-dom": "^18.2.21",
+          "@vitejs/plugin-react": "^4.7.0",
+          "auto": "^11.3.0",
+          "boxen": "^8.0.1",
+          "eslint": "^9.36.0",
+          "eslint-config-prettier": "^10.1.8",
+          "eslint-plugin-prettier": "^5.5.4",
+          "eslint-plugin-react": "^7.37.5",
+          "eslint-plugin-storybook": "next",
+          "npm-run-all2": "^8.0.4",
+          "prettier": "^3.6.2",
+          "prompts": "^2.4.2",
+          "react": "^18.2.0",
+          "react-dom": "^18.2.0",
+          "storybook": "next",
+          "ts-dedent": "^2.2.0",
+          "tsup": "^8.5.0",
+          "typescript": "^5.8.3",
+          "typescript-eslint": "^8.44.1",
+          "vite": "^7.0.5",
+          "zx": "^8.7.1"
+      },
+      "peerDependencies": {
+          "storybook": "^9.0.0 || ^10.0.0"
+      },
+      "publishConfig": {
+          "access": "public"
+      },
+      "bundler": {
+          "exportEntries": [
+              "src/index.ts"
+          ],
+          "managerEntries": [
+              "src/manager.tsx",
+              "src/manager-helpers.tsx"
+          ],
+          "previewEntries": [
+              "src/preview.ts",
+              "src/index.ts"
+          ]
+      },
+      "storybook": {
+          "displayName": "Storybook i18n",
+          "supportedFrameworks": [
+              "react",
+              "vue",
+              "angular"
+          ],
+          "icon": "https://user-images.githubusercontent.com/321738/63501763-88dbf600-c4cc-11e9-96cd-94adadc2fd72.png"
+      },
+      "packageManager": "pnpm@10.0.0",
+      "pnpm": {
+          "onlyBuiltDependencies": [
+              "esbuild"
+          ]
+      }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
