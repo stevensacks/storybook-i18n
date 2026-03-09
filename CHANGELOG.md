@@ -34,6 +34,18 @@
 
 ---
 
+# v10.0.4 (Tue Mar 10 2026)
+
+#### 🐛 Bug Fix
+
+- fix: bump @storybook/icons to ^2.0.1 [#30](https://github.com/stevensacks/storybook-i18n/pull/30) ([@cylewaitforit](https://github.com/cylewaitforit))
+
+#### Authors: 1
+
+- [@cylewaitforit](https://github.com/cylewaitforit)
+
+---
+
 # v10.0.3 (Fri Nov 07 2025)
 
 #### ⚠️ Pushed to `main`
