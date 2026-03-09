@@ -1,3 +1,15 @@
+# v10.0.9 (Tue Mar 10 2026)
+
+#### ⚠️ Pushed to `main`
+
+- chore: increment to 10.1.0 ([@stevensacks](https://github.com/stevensacks))
+
+#### Authors: 1
+
+- Steven Sacks ([@stevensacks](https://github.com/stevensacks))
+
+---
+
 # v10.0.4 (Tue Mar 10 2026)
 
 #### 🐛 Bug Fix
