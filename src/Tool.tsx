@@ -68,7 +68,7 @@ const Tool = () => {
     const selectedLabel = selected
         ? [selected.icon, isIconOnly ? locale : selected.title, selected.right]
               .filter(Boolean)
-              .join(' ')
+              .join(' ')
         : '';
 
     return (
