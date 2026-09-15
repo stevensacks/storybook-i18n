@@ -9,7 +9,7 @@ export const withLocale = (
     story: StoryFunction<Renderer>,
     context: StoryContext,
 ) => {
-    const [_, updateGlobals] = useGlobals();
+    const [, updateGlobals] = useGlobals();
 
     useEffect(() => {
         const {

@@ -18,8 +18,7 @@ export interface Link {
 }
 
 export type LocaleValue =
-    | string
-    | {title: string; icon?: string; right?: string};
+    string | {title: string; icon?: string; right?: string};
 
 const getValue = (value: LocaleValue) => {
     if (typeof value === 'string') {
@@ -60,11 +59,7 @@ const Tool = () => {
 
     const selected =
         locale && locales?.[locale] ? getValue(locales[locale]) : undefined;
-    const isIconOnly = !!(
-        selected?.icon &&
-        !selected.title &&
-        !selected.right
-    );
+    const isIconOnly = !!(selected?.icon && !selected.title && !selected.right);
     const selectedLabel = selected
         ? [selected.icon, isIconOnly ? locale : selected.title, selected.right]
               .filter(Boolean)
