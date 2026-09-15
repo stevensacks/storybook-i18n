@@ -58,6 +58,9 @@ const Tool = () => {
     const {locale, locales} = globals;
     const emit = useChannel({});
 
+    const selectedTitle =
+        locale && locales?.[locale] ? getValue(locales[locale]).title : '';
+
     return (
         <WithTooltip
             closeOnOutsideClick={true}
@@ -77,6 +80,7 @@ const Tool = () => {
         >
             <IconButton key="i18n-locale" title="Locale Selector">
                 <GlobeIcon />
+                {selectedTitle ? ` ${selectedTitle}` : null}
             </IconButton>
         </WithTooltip>
     );
