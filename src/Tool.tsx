@@ -58,8 +58,9 @@ const Tool = () => {
     const {locale, locales} = globals;
     const emit = useChannel({});
 
-    const selectedTitle =
-        locale && locales?.[locale] ? getValue(locales[locale]).title : '';
+    const selected =
+        locale && locales?.[locale] ? getValue(locales[locale]) : undefined;
+    const selectedLabel = selected?.title || selected?.icon || '';
 
     return (
         <WithTooltip
@@ -80,7 +81,7 @@ const Tool = () => {
         >
             <IconButton key="i18n-locale" title="Locale Selector">
                 <GlobeIcon />
-                {selectedTitle ? ` ${selectedTitle}` : null}
+                {selectedLabel ? ` ${selectedLabel}` : null}
             </IconButton>
         </WithTooltip>
     );
