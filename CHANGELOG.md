@@ -1,3 +1,16 @@
+# v10.1.2 (Tue Sep 15 2026)
+
+#### 🐛 Bug Fix
+
+- ci: migrate release workflow and repo to pnpm [#34](https://github.com/stevensacks/storybook-i18n/pull/34) ([@stevensacks](https://github.com/stevensacks))
+- Show selected locale name in toolbar [#33](https://github.com/stevensacks/storybook-i18n/pull/33) ([@stevensacks](https://github.com/stevensacks))
+
+#### Authors: 1
+
+- Steven Sacks ([@stevensacks](https://github.com/stevensacks))
+
+---
+
 # v10.0.9 (Tue Mar 10 2026)
 
 #### ⚠️ Pushed to `main`
