@@ -60,7 +60,11 @@ const Tool = () => {
 
     const selected =
         locale && locales?.[locale] ? getValue(locales[locale]) : undefined;
-    const selectedLabel = selected?.title || selected?.icon || '';
+    const selectedLabel = selected
+        ? [selected.icon, selected.title, selected.right]
+              .filter(Boolean)
+              .join(' ')
+        : '';
 
     return (
         <WithTooltip
