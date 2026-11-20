@@ -1,6 +1,8 @@
 import {definePreview} from '@storybook/react-vite';
+import i18nAddon from '../src';
 
 export default definePreview({
+    addons: [i18nAddon()],
     initialGlobals: {
         locale: 'en',
         locales: {
