@@ -78,6 +78,8 @@ export default definePreview({
 });
 ```
 
+Do not also register an addon that builds on this library, or the locale decorator is applied twice.
+
 ## End users
 
 End users configure the `locales` and `locale` globals in `.storybook/preview.ts`.
