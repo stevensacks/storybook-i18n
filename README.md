@@ -59,6 +59,27 @@ const myDecorator = (story, context) => {
 }
 ```
 
+If your `.storybook/preview.ts` uses CSF Factories (`definePreview`, the default format in Storybook 11), Storybook only loads the preview annotations of addons that you register in `addons`. Addons that build on this library re-export its annotations from their own entry, so their users register only that addon. If you use this library on its own, register it directly:
+
+```typescript
+import {definePreview} from '@storybook/react-vite';
+import i18nAddon from 'storybook-i18n';
+
+export default definePreview({
+    addons: [i18nAddon()],
+    initialGlobals: {
+        locale: 'en',
+        locales: {
+            en: 'English',
+            fr: 'Français',
+            ja: '日本語',
+        },
+    },
+});
+```
+
+Do not also register an addon that builds on this library, or the locale decorator is applied twice.
+
 ## End users
 
 End users configure the `locales` and `locale` globals in `.storybook/preview.ts`.
