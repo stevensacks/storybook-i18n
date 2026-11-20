@@ -1,8 +1,8 @@
 import React from 'react';
 import {
-    IconButton,
-    WithTooltip,
-    TooltipLinkList,
+    ActionList,
+    Button,
+    PopoverProvider,
 } from 'storybook/internal/components';
 import {GlobeIcon} from '@storybook/icons';
 import {useChannel, useGlobals} from 'storybook/manager-api';
@@ -67,27 +67,50 @@ const Tool = () => {
         : '';
 
     return (
-        <WithTooltip
-            closeOnOutsideClick={true}
+        <PopoverProvider
+            ariaLabel="Locale Selector"
             placement="top"
-            tooltip={({onHide}) => (
-                <TooltipLinkList
-                    links={getLocales(locales, locale, (selected) => {
+            popover={({onHide}) => (
+                <ActionList>
+                    {getLocales(locales, locale, (selected) => {
                         if (selected !== locale) {
                             updateGlobals({locale: selected});
                             emit(EVENT_NAME, selected);
                         }
                         onHide();
-                    })}
-                />
+                    }).map((link) => (
+                        <ActionList.Item key={link.id} active={link.active}>
+                            <ActionList.Action
+                                ariaLabel={false}
+                                onClick={link.onClick}
+                            >
+                                {link.icon ? (
+                                    <ActionList.Icon>
+                                        {link.icon}
+                                    </ActionList.Icon>
+                                ) : null}
+                                <ActionList.Text>{link.title}</ActionList.Text>
+                                {link.right ? (
+                                    <ActionList.Text>
+                                        {link.right}
+                                    </ActionList.Text>
+                                ) : null}
+                            </ActionList.Action>
+                        </ActionList.Item>
+                    ))}
+                </ActionList>
             )}
-            trigger="click"
         >
-            <IconButton key="i18n-locale" title="Locale Selector">
+            <Button
+                ariaLabel="Locale Selector"
+                key="i18n-locale"
+                padding="small"
+                variant="ghost"
+            >
                 <GlobeIcon />
                 {selectedLabel ? ` ${selectedLabel}` : null}
-            </IconButton>
-        </WithTooltip>
+            </Button>
+        </PopoverProvider>
     );
 };
 
