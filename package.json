@@ -99,7 +99,8 @@
         "previewEntries": [
             "src/preview.ts",
             "src/index.ts"
-        ]
+        ],
+        "nodeEntries": []
     },
     "storybook": {
         "displayName": "Storybook i18n",
